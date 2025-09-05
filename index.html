@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teacher's Day - Pranay Sir,</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .matrix-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .card {
+      background: rgba(0, 20, 40, 0.9);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      max-width: 650px;
+      border: 2px solid #00ffff;
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      color: #00ff41;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #00ff41;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    
+    .code-line {
+      color: #00ffff;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      text-align: left;
+    }
+    
+    .message {
+      background: rgba(0, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #00ffff;
+    }
+    
+    .message p {
+      font-size: 1.3rem;
+      margin: 0.8rem 0;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .signature {
+      color: #00ff41;
+      font-style: italic;
+      margin-top: 1.5rem;
+    }
+    
+    .blink {
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="matrix-bg" id="matrix"></div>
+  
+  <div class="card">
+    <h1>Happy Teacher's Day 💻</h1>
+    
+    <div class="code-line">class TeacherAppreciation {</div>
+    <div class="code-line">&nbsp;&nbsp;public static void main() {</div>
+    
+    <div class="message">
+      <p>Dear Sir Pranay Panchal,</p>
+      <p>You've been the perfect mentor in the world of technology! From debugging my first "Hello World" to guiding me through complex algorithms, you've made coding feel like an adventure.</p>
+      <p>Thank you for teaching me that every error is just a step closer to the solution, and that good code is not just about syntax, but about logic and creativity.</p>
+    </div>
+    
+    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Thank you for everything!");</div>
+    <div class="code-line">&nbsp;&nbsp;}</div>
+    <div class="code-line">}<span class="blink">|</span></div>
+    
+    <div class="tech-icons">
+      💾 ⌨️ 🖥️ 💡
+    </div>
+    
+    <div class="signature">
+      // Compiled with gratitude by Pratyoosh
+    </div>
+  </div>
+
+  <script>
+    // Simple matrix effect
+    const matrix = document.getElementById('matrix');
+    const chars = '01';
+    
+    function createMatrixRain() {
+      for (let i = 0; i < 50; i++) {
+        const span = document.createElement('span');
+        span.style.position = 'absolute';
+        span.style.left = Math.random() * 100 + '%';
+        span.style.top = Math.random() * 100 + '%';
+        span.style.color = '#00ff41';
+        span.style.fontSize = '14px';
+        span.innerText = chars[Math.floor(Math.random() * chars.length)];
+        span.style.animation = `fall ${3 + Math.random() * 3}s linear infinite`;
+        matrix.appendChild(span);
+      }
+    }
+    
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fall {
+        to { transform: translateY(100vh); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    createMatrixRain();
+  </script>
+</body>
+</html>
